@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const SignUP = () => {
         const {createUser}= useContext(AuthContext);
         const handleSignIn=event=>{
-            event.prevenDefault();
+            event.preventDefault();
             
             const form=event.target;
 
@@ -20,7 +20,7 @@ const SignUP = () => {
                     const user =result.user;
                     console.log(user)
                 })
-                .then(error => console.log(error))
+                .catch(error => console.log(error))
         }
 
     return (
